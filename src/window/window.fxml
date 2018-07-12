@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="688.0" style="-fx-background-color: #FFFFFF;" styleClass="pane" stylesheets="@css.css" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="window.Controller">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="688.0" style="-fx-background-color: #00A9AF;" styleClass=".background" stylesheets="@css.css">
+         <children>
+            <Text fill="#fffeff" layoutX="269.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OptImage" textAlignment="CENTER" wrappingWidth="149.9999976158142">
+               <font>
+                  <Font name="DejaVu Serif" size="29.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="30.0" layoutX="651.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/cancel.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btnDiminish" fitHeight="30.0" fitWidth="28.0" layoutX="614.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/forbidden.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <JFXCheckBox fx:id="checkCompress" checkedColor="#00a9af" layoutX="50.0" layoutY="80.0" text="Compress">
+         <font>
+            <Font name="Fira Sans Condensed Regular" size="19.0" />
+         </font>
+      </JFXCheckBox>
+      <JFXCheckBox fx:id="checkWatermark" checkedColor="#00a9af" layoutX="50.0" layoutY="114.0" text="Watermark">
+         <font>
+            <Font name="Fira Sans Condensed Regular" size="19.0" />
+         </font>
+      </JFXCheckBox>
+      <Line endX="488.0" layoutX="150.0" layoutY="157.0" startX="-100.0" />
+      <TextField fx:id="txtFilePath" layoutX="50.0" layoutY="180.0" prefHeight="36.0" prefWidth="443.0">
+         <font>
+            <Font name="Fira Sans Condensed Regular" size="15.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="btnChoose" buttonType="RAISED" layoutX="515.0" layoutY="180.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="124.0" style="-fx-background-color: #00A9AF;" styleClass="btnChooseStyle" stylesheets="@css.css" text="Choose File..." textFill="WHITE">
+         <font>
+            <Font name="Fira Sans Condensed Regular" size="17.0" />
+         </font>
+      </JFXButton>
+      <ImageView fx:id="imageHolder" fitHeight="276.0" fitWidth="232.0" layoutX="50.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/placeholder.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtNewId" layoutX="309.0" layoutY="277.0" prefHeight="36.0" prefWidth="330.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Text layoutX="309.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Identity:">
+         <font>
+            <Font name="Fira Sans Condensed Regular" size="19.0" />
+         </font>
+      </Text>
+      <JFXProgressBar fx:id="progress" layoutX="309.0" layoutY="367.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="330.0" progress="0.1" />
+      <JFXButton fx:id="compressSave" buttonType="RAISED" layoutX="309.0" layoutY="439.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="336.0" style="-fx-background-color: #00A9AF;" styleClass="btnChooseStyle" stylesheets="@css.css" text="Compress &amp; SAVE" textFill="WHITE">
+         <font>
+            <Font name="Fira Sans Condensed Regular" size="17.0" />
+         </font>
+      </JFXButton>
+      <BorderPane depthTest="DISABLE" layoutX="-1.0" layoutY="44.0" prefHeight="466.0" prefWidth="8.0" style="-fx-background-color: #00A9AF;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </BorderPane>
+      <BorderPane depthTest="DISABLE" layoutX="680.0" layoutY="44.0" prefHeight="466.0" prefWidth="8.0" style="-fx-background-color: #00A9AF;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </BorderPane>
+      <BorderPane depthTest="DISABLE" layoutX="-1.0" layoutY="498.0" prefHeight="12.0" prefWidth="688.0" style="-fx-background-color: #00A9AF;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </BorderPane>
+   </children>
+</Pane>
