@@ -108,7 +108,10 @@ public class Controller {
             optimisation optimisationObj = new optimisation();
             optimisationObj.compress(imagePath, newIdentity);
         } else if (checkWatermark.isSelected()) {
-
+            newIdentity = folder + "/" + txtNewId.getText() + "-watermarked.jpg";
+            System.out.println(newIdentity);
+            optimisation optimisationObj = new optimisation();
+            optimisationObj.watermark(imagePath, newIdentity);
         } else if (checkWatermark.isSelected() && checkCompress.isSelected()) {
 
         } else {
