@@ -1,0 +1,15 @@
+.successborder {
+    -fx-background-color: #00c853;
+}
+
+.successbutton {
+    -fx-background-color: #00c853;
+}
+
+.errorborder {
+    -fx-background-color: #d32f2f;
+}
+
+.errorbutton {
+    -fx-background-color: #d32f2f;
+}

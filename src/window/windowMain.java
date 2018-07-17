@@ -15,7 +15,7 @@ public class windowMain extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("window.fxml"));
         windowMainStage.setTitle("OptImage");
         windowMainStage.setScene(new Scene(root, 688, 509));
-        windowMainStage.getIcons().add(new Image(Controller.class.getResourceAsStream("../media/cancel.png")));
+        windowMainStage.getIcons().add(new Image(Controller.class.getResourceAsStream("../media/logo.jpg")));
         windowMainStage.initStyle(StageStyle.UNDECORATED);
         windowMainStage.show();
     }
