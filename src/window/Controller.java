@@ -6,7 +6,6 @@ import optimise.optimisation;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXProgressBar;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -16,17 +15,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Controller {
 
-    Image image;
     String imagePath;
     String newIdentity;
     String folder;
@@ -61,10 +53,12 @@ public class Controller {
     @FXML
     private JFXButton compressSave;
 
+
     @FXML
     void closeThis(MouseEvent event) {
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
+
 
     @FXML
     void minimizeThis(MouseEvent event) {
@@ -72,36 +66,49 @@ public class Controller {
         stage.setIconified(true);
     }
 
+
     @FXML
     void chooseImage(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-
-        //Show open file dialog
-        File file = fileChooser.showOpenDialog(null);
-
-        FileChooser.ExtensionFilter imageFilter
-                = new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.jpeg");
-        fileChooser.getExtensionFilters().add(imageFilter);
-        folder = file.getParent();
-
         try {
-            BufferedImage bufferedImage = ImageIO.read(file);
-            image = SwingFXUtils.toFXImage(bufferedImage, null);
-            imageHolder.setImage(image);
-            imagePath = file.toString();
-            txtFilePath.setText(imagePath);
-        } catch (IOException ex) {
-            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Choose Image To Optimise");
+
+            // filter/restrict the files that can be chosen to .jpeg and .jpg
+            fileChooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("Image Files", "*.jpeg", "*.jpg"));
+
+            //Show open file dialog
+            File selectedImage = fileChooser.showOpenDialog(null);
+            folder = selectedImage.getParent();
+            System.out.println(folder);
+
+            // Check if the image is empty (null)
+            if (selectedImage != null) {
+                imagePath = selectedImage.toString();
+                txtFilePath.setText(imagePath);
+                Image img = new Image(selectedImage.toURI().toURL().toExternalForm());
+                imageHolder.setImage(img);
+            } else {
+                String message = "Choose an image to proceed with optimisation";
+                errorOrSuccessMessage(0, message,null);
+            }
+        } catch (Exception e) {
+            errorOrSuccessMessage(2, null, e);
         }
+
     }
 
+
+    // Checks if any of the necessary controls are left blank
     @FXML
     void optimise(ActionEvent event) {
-        checkNewName();
+        checkNulls();
     }
 
+
     //    CHECK TO SEE WHAT OPTIMISATION OPTION HAS BEEN CHOSEN
-    void checkOptimisationOption() {
+    private void checkOptimisationOption() {
         if (checkCompress.isSelected()) {
             newIdentity = folder + "/" + txtNewId.getText() + "-compressed.jpg";
             System.out.println(newIdentity);
@@ -115,28 +122,33 @@ public class Controller {
         } else if (checkWatermark.isSelected() && checkCompress.isSelected()) {
 
         } else {
-            getMessage(0);
+            String message = "Select an optimisation option: tick 'Compress', 'Watermark' or both.";
+            errorOrSuccessMessage(0, message, null);
         }
     }
 
-    //    CHECK TO SEE IF NEW NAME HAS BEEN FILLED/CHOSEN
-    void checkNewName() {
-        if (txtNewId.getText().trim().isEmpty()) {
-            getMessage(0);
+
+    //    CHECK TO SEE IF CONTROLS HAVE BEEN FILLED/CHOSEN
+    void checkNulls() {
+        if (!checkCompress.isSelected() && !checkWatermark.isSelected()) {
+            String message = "Ensure you select an optimisation method to use";
+            errorOrSuccessMessage(0, message, null);
+        } else if (txtFilePath.getText().trim().isEmpty()) {
+            String message = "Select an image to optimise";
+            errorOrSuccessMessage(0, message, null);
+        } else if (txtNewId.getText().trim().isEmpty()) {
+            String message = "New identity cannot be left empty!";
+            errorOrSuccessMessage(0, message, null);
         } else {
             checkOptimisationOption();
         }
     }
 
+
     //    GET THE APPROPRIATE ALERT OR MESSAGE
-    void getMessage(int n) {
-        if (n == 0) {
-            errorSuccess errorSuccessObj = new errorSuccess();
-            errorSuccessObj.errorMessage();
-        } else {
-            errorSuccess errorSuccessObj = new errorSuccess();
-            errorSuccessObj.successMessage();
-        }
+    void errorOrSuccessMessage(int n, String message, Exception e) {
+        errorSuccess errorSuccessObj = new errorSuccess();
+        errorSuccessObj.getMessage(n, message, e);
     }
 
 

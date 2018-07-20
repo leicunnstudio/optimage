@@ -16,6 +16,7 @@ public class optimisation {
 
     private Boolean success;
 
+
     public void compress(String path, String newName) {
 
         try {
@@ -26,23 +27,32 @@ public class optimisation {
             success = true;
 
         } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            getMessage(success);
+//            System.out.println(e);
+//            e.printStackTrace();
+            errorOrSuccessMessage(2, null, e);
+        }
+
+        if (success) { // if success is TRUE (meaning no exceptions have occurred)
+            // the message is a type 1 (all went well a.k.a success)
+            String message = "The image has been compressed. Click 'View file' or 'View folder' to view.";
+            errorOrSuccessMessage(1, message, null);
+        } else { // if success is FALSE (meaning an exception has occurred)
+            // the message is a type 0 (an error occured)
+            String message = "An error occurred while compressing the image, try again!";
+            errorOrSuccessMessage(0, message, null);
         }
 
     }
 
-    private void getMessage(Boolean checkSuccess) {
-        if (success) {
-            errorSuccess errorSuccessObj = new errorSuccess();
-            errorSuccessObj.successMessage();
-        } else {
-            errorSuccess errorSuccessObj = new errorSuccess();
-            errorSuccessObj.errorMessage();
-        }
+
+    // Gets error or success message for display on dialog
+    private void errorOrSuccessMessage(int type, String message, Exception e) {
+        errorSuccess errorSuccessObj = new errorSuccess();
+        errorSuccessObj.getMessage(type, message, e);
     }
 
+
+    // method to watermark image
     public void watermark(String path, String newName) {
 
         File watermark;
@@ -89,13 +99,22 @@ public class optimisation {
             success = true;
 
         } catch (IOException | URISyntaxException ex) {
-            System.err.println(ex);
+//            System.out.println(ex);
 //            ex.printStackTrace();
-        } finally {
-            getMessage(success);
+            errorOrSuccessMessage(2, null, ex);
+        }
+        if (success) { // if success is TRUE (meaning no exceptions have occurred)
+            // the message is a type 1 (all went well a.k.a success)
+            String message = "The image has been watermarked. Click 'View file' or 'View folder' to view.";
+            errorOrSuccessMessage(1, message, null);
+        } else { // if success is FALSE (meaning an exception has occurred)
+            // the message is a type 0 (an error occured)
+            String message = "An error occurred while watermarking the image, try again!";
+            errorOrSuccessMessage(0, message, null);
         }
 
     }
+
 
 //  RESIZES THE WATERMARK WITH REFERENCE TO THE IMAGES TO BE WATERMARKED
     private static BufferedImage resize(BufferedImage img, int height, int width) {

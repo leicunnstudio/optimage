@@ -14,7 +14,7 @@ public class windowMain extends Application {
     public void start(Stage windowMainStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("window.fxml"));
         windowMainStage.setTitle("OptImage");
-        windowMainStage.setScene(new Scene(root, 688, 509));
+        windowMainStage.setScene(new Scene(root, 750, 509));
         windowMainStage.getIcons().add(new Image(Controller.class.getResourceAsStream("../media/logo.jpg")));
         windowMainStage.initStyle(StageStyle.UNDECORATED);
         windowMainStage.show();
