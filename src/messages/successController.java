@@ -62,7 +62,6 @@ public class successController implements Initializable {
             System.out.println(fd);
             desktop.open(fd);
         } catch (IllegalArgumentException | IOException iae) {
-//            System.out.println("File Not Found");
             String message = "File Not Found";
             errorOrSuccessMessage(0, message, null);
         } finally {
@@ -77,10 +76,8 @@ public class successController implements Initializable {
         Desktop desktop = Desktop.getDesktop();
         try {
             fd = new File(filePath).getParentFile();
-//            System.out.println(fd.getParentFile());
             desktop.open(fd);
         } catch (IllegalArgumentException | IOException iae) {
-//            System.out.println("File Not Found");
             String message = "File Not Found";
             errorOrSuccessMessage(0, message, null);
         } finally {
@@ -90,7 +87,7 @@ public class successController implements Initializable {
 
 
     //    GET THE APPROPRIATE ALERT OR MESSAGE
-    void errorOrSuccessMessage(int n, String message, Exception e) {
+    private void errorOrSuccessMessage(int n, String message, Exception e) {
         errorSuccess errorSuccessObj = new errorSuccess();
         errorSuccessObj.getMessage(n, message, e, null);
     }

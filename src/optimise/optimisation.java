@@ -27,8 +27,6 @@ public class optimisation {
             success = true;
 
         } catch (Exception e) {
-//            System.out.println(e);
-//            e.printStackTrace();
             errorOrSuccessMessage(2, null, e, null);
         }
 
@@ -53,7 +51,7 @@ public class optimisation {
 
 
     // method to watermark image
-    public void watermark(String path, String newName) {
+    public String watermark(int type, String path, String newName) {
 
         File watermark;
         File newResized;
@@ -99,8 +97,6 @@ public class optimisation {
             success = true;
 
         } catch (IOException | URISyntaxException ex) {
-//            System.out.println(ex);
-//            ex.printStackTrace();
             errorOrSuccessMessage(2, null, ex, null);
         }
         if (success) { // if success is TRUE (meaning no exceptions have occurred)
@@ -111,6 +107,12 @@ public class optimisation {
             // the message is a type 0 (an error occured)
             String message = "An error occurred while watermarking the image, try again!";
             errorOrSuccessMessage(0, message, null, null);
+        }
+
+        if (type == 2) {
+            return newName;
+        } else {
+            return null;
         }
 
     }

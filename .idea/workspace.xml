@@ -3,17 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/optimage/messages/errorSuccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/optimage/messages/errorSuccess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/optimage/messages/success.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/optimage/messages/success.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/optimage/messages/successController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/optimage/messages/successController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/optimage/messages/successController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/optimage/messages/successController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/optimage/optimise/optimisation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/optimage/optimise/optimisation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/optimage/window/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/optimage/window/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/messages/errorSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/errorSuccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messages/success.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/success.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/messages/successController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/successController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/optimise/optimisation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/optimise/optimisation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/window/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/window/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/window/css.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/window/window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/window/window.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,22 +68,7 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="successController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/messages/successController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="86" column="70" selection-start-line="86" selection-start-column="70" selection-end-line="86" selection-end-column="70" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2467#2468#0" expanded="true" />
-                <element signature="e#2528#2529#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -118,7 +101,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/messages/alert.css" />
         <option value="$PROJECT_DIR$/src/messages/success.fxml" />
-        <option value="$PROJECT_DIR$/src/window/window.fxml" />
         <option value="$PROJECT_DIR$/src/optimise/fileOutputHelper.java" />
         <option value="$PROJECT_DIR$/src/optimise/fileCharIterator.java" />
         <option value="$PROJECT_DIR$/src/optimise/fileFreqWordsIterator.java" />
@@ -126,10 +108,11 @@
         <option value="$PROJECT_DIR$/src/messages/errorController.java" />
         <option value="$PROJECT_DIR$/src/messages/error.fxml" />
         <option value="$PROJECT_DIR$/src/window/windowMain.java" />
-        <option value="$PROJECT_DIR$/src/optimise/optimisation.java" />
-        <option value="$PROJECT_DIR$/src/window/Controller.java" />
         <option value="$PROJECT_DIR$/src/messages/errorSuccess.java" />
+        <option value="$PROJECT_DIR$/src/window/Controller.java" />
+        <option value="$PROJECT_DIR$/src/window/window.fxml" />
         <option value="$PROJECT_DIR$/src/messages/successController.java" />
+        <option value="$PROJECT_DIR$/src/optimise/optimisation.java" />
       </list>
     </option>
   </component>
@@ -140,7 +123,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1612" />
@@ -361,16 +344,15 @@
       <workItem from="1531917029297" duration="8646000" />
       <workItem from="1532003017122" duration="22005000" />
       <workItem from="1532116153908" duration="16409000" />
-      <workItem from="1532135021821" duration="474000" />
+      <workItem from="1532135021821" duration="3281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61532000" />
+    <option name="totallyTimeSpent" value="64339000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="44" width="1366" height="724" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="44" width="1366" height="724" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -480,8 +462,6 @@
           <caret line="59" column="9" lean-forward="true" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2467#2468#0" expanded="true" />
-            <element signature="e#2528#2529#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -522,8 +502,6 @@
           <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2467#2468#0" expanded="true" />
-            <element signature="e#2528#2529#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -634,43 +612,13 @@
     <entry file="file://$PROJECT_DIR$/src/optimise/fileFreqWordsIterator.java" />
     <entry file="file://$PROJECT_DIR$/src/optimise/huffmanEncoding.java" />
     <entry file="file://$PROJECT_DIR$/src/optimise/fileOutputHelper.java" />
-    <entry file="file://$PROJECT_DIR$/src/messages/errorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-197">
-          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#832#833#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1333#1334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/window/windowMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/optimise/optimisation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="112" column="56" selection-start-line="112" selection-start-column="56" selection-end-line="112" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/window/css.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/messages/errorSuccess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-277">
-          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        <state relative-caret-position="-1117">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -679,8 +627,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/window/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="134" column="5" lean-forward="true" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+        <state relative-caret-position="-337">
+          <caret line="131" column="48" selection-start-line="131" selection-start-column="48" selection-end-line="131" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/window/window.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1820">
+          <caret line="78" column="300" selection-start-line="78" selection-start-column="300" selection-end-line="78" selection-end-column="300" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/window/windowMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messages/errorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -689,12 +665,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/messages/successController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="86" column="70" selection-start-line="86" selection-start-column="70" selection-end-line="86" selection-end-column="70" />
+        <state relative-caret-position="-100">
+          <caret line="79" column="62" selection-start-line="79" selection-start-column="62" selection-end-line="79" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2467#2468#0" expanded="true" />
-            <element signature="e#2528#2529#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/optimise/optimisation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2640">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="133" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

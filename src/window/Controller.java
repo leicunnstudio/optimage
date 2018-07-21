@@ -16,12 +16,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 
 public class Controller {
 
-    String imagePath;
-    String newIdentity;
-    String folder;
+    private String imagePath;
+    private String folder;
 
     @FXML
     private ImageView btnClose;
@@ -109,22 +110,35 @@ public class Controller {
 
     //    CHECK TO SEE WHAT OPTIMISATION OPTION HAS BEEN CHOSEN
     private void checkOptimisationOption() {
-        if (checkCompress.isSelected()) {
-            newIdentity = folder + "/" + txtNewId.getText() + "-compressed.jpg";
-            System.out.println(newIdentity);
-            optimisation optimisationObj = new optimisation();
-            optimisationObj.compress(imagePath, newIdentity);
-        } else if (checkWatermark.isSelected()) {
-            newIdentity = folder + "/" + txtNewId.getText() + "-watermarked.jpg";
-            System.out.println(newIdentity);
-            optimisation optimisationObj = new optimisation();
-            optimisationObj.watermark(imagePath, newIdentity);
-        } else if (checkWatermark.isSelected() && checkCompress.isSelected()) {
-
-        } else {
-            String message = "Select an optimisation option: tick 'Compress', 'Watermark' or both.";
-            errorOrSuccessMessage(0, message, null);
+        String newIdentity, newIdentity2;
+        try {
+            if (checkCompress.isSelected() && !checkWatermark.isSelected()) {
+                newIdentity = folder + "/" + txtNewId.getText() + "-compressed.jpg";
+                System.out.println(newIdentity);
+                optimisation optimisationObj = new optimisation();
+                optimisationObj.compress(imagePath, newIdentity);
+            } else if (checkWatermark.isSelected() && !checkCompress.isSelected()) {
+                newIdentity = folder + "/" + txtNewId.getText() + "-watermarked.jpg";
+                System.out.println(newIdentity);
+                optimisation optimisationObj = new optimisation();
+                optimisationObj.watermark(1, imagePath, newIdentity);
+            } else if (checkWatermark.isSelected() && checkCompress.isSelected()) {
+                newIdentity = folder + "/" + txtNewId.getText() + "-end.jpg";
+                System.out.println(newIdentity);
+                optimisation optimisationObj = new optimisation();
+                String watermarkedImage = optimisationObj.watermark(2, imagePath, newIdentity);
+                newIdentity2 = folder + "/" + txtNewId.getText() + "-optimised.jpg";
+                optimisationObj.compress(watermarkedImage, newIdentity2);
+                File fd = new File(newIdentity);
+                Files.deleteIfExists(new File (newIdentity).toPath());
+            } else {
+                String message = "Select an optimisation option: tick 'Compress', 'Watermark' or both.";
+                errorOrSuccessMessage(0, message, null);
+            }
+        } catch (IOException ex) {
+            errorOrSuccessMessage(2, null, ex);
         }
+
     }
 
 
