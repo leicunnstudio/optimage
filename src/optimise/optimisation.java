@@ -29,26 +29,26 @@ public class optimisation {
         } catch (Exception e) {
 //            System.out.println(e);
 //            e.printStackTrace();
-            errorOrSuccessMessage(2, null, e);
+            errorOrSuccessMessage(2, null, e, null);
         }
 
         if (success) { // if success is TRUE (meaning no exceptions have occurred)
             // the message is a type 1 (all went well a.k.a success)
             String message = "The image has been compressed. Click 'View file' or 'View folder' to view.";
-            errorOrSuccessMessage(1, message, null);
+            errorOrSuccessMessage(1, message, null, newName);
         } else { // if success is FALSE (meaning an exception has occurred)
             // the message is a type 0 (an error occured)
             String message = "An error occurred while compressing the image, try again!";
-            errorOrSuccessMessage(0, message, null);
+            errorOrSuccessMessage(0, message, null, null);
         }
 
     }
 
 
     // Gets error or success message for display on dialog
-    private void errorOrSuccessMessage(int type, String message, Exception e) {
+    private void errorOrSuccessMessage(int type, String message, Exception e, String link) {
         errorSuccess errorSuccessObj = new errorSuccess();
-        errorSuccessObj.getMessage(type, message, e);
+        errorSuccessObj.getMessage(type, message, e, link);
     }
 
 
@@ -101,16 +101,16 @@ public class optimisation {
         } catch (IOException | URISyntaxException ex) {
 //            System.out.println(ex);
 //            ex.printStackTrace();
-            errorOrSuccessMessage(2, null, ex);
+            errorOrSuccessMessage(2, null, ex, null);
         }
         if (success) { // if success is TRUE (meaning no exceptions have occurred)
             // the message is a type 1 (all went well a.k.a success)
             String message = "The image has been watermarked. Click 'View file' or 'View folder' to view.";
-            errorOrSuccessMessage(1, message, null);
+            errorOrSuccessMessage(1, message, null, newName);
         } else { // if success is FALSE (meaning an exception has occurred)
             // the message is a type 0 (an error occured)
             String message = "An error occurred while watermarking the image, try again!";
-            errorOrSuccessMessage(0, message, null);
+            errorOrSuccessMessage(0, message, null, null);
         }
 
     }

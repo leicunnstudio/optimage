@@ -148,7 +148,7 @@ public class Controller {
     //    GET THE APPROPRIATE ALERT OR MESSAGE
     void errorOrSuccessMessage(int n, String message, Exception e) {
         errorSuccess errorSuccessObj = new errorSuccess();
-        errorSuccessObj.getMessage(n, message, e);
+        errorSuccessObj.getMessage(n, message, e, null);
     }
 
 

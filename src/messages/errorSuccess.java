@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 public class errorSuccess {
 
-    public void successMessage(String message) {
+    public void successMessage(String message, String link) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("success.fxml"));
@@ -27,6 +27,7 @@ public class errorSuccess {
 
             successController controller = fxmlLoader.<successController>getController();
             controller.setLabelText(message);
+            controller.setFilePath(link);
 
             stage.show();
         } catch (IOException e) {
@@ -56,11 +57,11 @@ public class errorSuccess {
         }
     }
 
-    public void getMessage (int n, String message, Exception e) {
+    public void getMessage (int n, String message, Exception e, String link) {
         if (n == 0) {
             errorMessage(message);
         } else if (n == 1) {
-            successMessage(message);
+            successMessage(message, link);
         } else if (n == 2) {
             convertExceptionToString(e);
         }
